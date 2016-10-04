@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'farmars/index'
+  root to: 'farmars#index'
+  get 'farmars/index' => 'farmars#index', as: "index"
 
   get 'vendors/index'
 
