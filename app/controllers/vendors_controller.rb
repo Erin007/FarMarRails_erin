@@ -1,4 +1,4 @@
-class MarketController < ApplicationController
+class VendorsController < ApplicationController
   def index
   end
 
@@ -8,6 +8,9 @@ class MarketController < ApplicationController
   def create
   end
 
+  def show
+  end
+
   def edit
   end
 
@@ -15,8 +18,5 @@ class MarketController < ApplicationController
   end
 
   def destroy
-  end
-
-  def show
   end
 end

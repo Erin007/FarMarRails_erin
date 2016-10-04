@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  get 'vendors/index'
+
+  get 'vendors/new'
+
+  get 'vendors/create'
+
+  get 'vendors/show'
+
+  get 'vendors/edit'
+
+  get 'vendors/update'
+
+  get 'vendors/destroy'
+
+  get 'markets/index'
+
+  get 'markets/new'
+
+  get 'markets/create'
+
+  get 'markets/show'
+
+  get 'markets/edit'
+
+  get 'markets/update'
+
+  get 'markets/destroy'
+
   get 'vendor/index'
 
   get 'vendor/new'
