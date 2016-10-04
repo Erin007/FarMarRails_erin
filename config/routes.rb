@@ -1,62 +1,36 @@
 Rails.application.routes.draw do
   root to: 'farmars#index'
+
   get 'farmars/index' => 'farmars#index', as: "index"
 
-  get 'vendors/index'
+  get 'vendors/index' => 'vendors#index', as: "vendors"
 
-  get 'vendors/new'
+  get 'vendors/new' => 'vendors#new', as: "vendors_new"
 
-  get 'vendors/create'
+  get 'vendors/create' => 'vendors#create', as: "vendors_create"
 
-  get 'vendors/show'
+  get 'vendors/show' => 'vendors#show', as: "vendors_show"
 
-  get 'vendors/edit'
+  get 'vendors/edit' => 'vendors#edit', as: "vendors_edit"
 
-  get 'vendors/update'
+  get 'vendors/update' => 'vendors#update', as: "vendors_update"
 
-  get 'vendors/destroy'
+  get 'vendors/destroy' => 'vendors#destroy', as: "vendors_destroy"
 
-  get 'markets/index'
+  get 'markets/index' => 'markets#index', as: "markets"
 
-  get 'markets/new'
+  get 'markets/new' => 'markets#new', as: "markets_new"
 
-  get 'markets/create'
+  get 'markets/create' => 'markets#create', as: "markets_create"
 
-  get 'markets/show'
+  get 'markets/show' => 'markets#show', as: "markets_show"
 
-  get 'markets/edit'
+  get 'markets/edit' => 'markets#edit', as: "markets_edit"
 
-  get 'markets/update'
+  get 'markets/update' => 'markets#update', as: "markets_update"
 
-  get 'markets/destroy'
+  get 'markets/destroy' => 'markets#destroy', as: "markets_destroy"
 
-  get 'vendor/index'
-
-  get 'vendor/new'
-
-  get 'vendor/create'
-
-  get 'vendor/edit'
-
-  get 'vendor/update'
-
-  get 'vendor/destroy'
-
-  get 'vendor/show'
-
-  get 'market/index'
-
-  get 'market/new'
-
-  get 'market/create'
-
-  get 'market/edit'
-
-  get 'market/update'
-
-  get 'market/destroy'
-
-  get 'market/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
