@@ -7,29 +7,29 @@ Rails.application.routes.draw do
 
   get 'vendors/new' => 'vendors#new', as: "vendors_new"
 
-  get 'vendors/create' => 'vendors#create', as: "vendors_create"
+  post 'vendors/create' => 'vendors#create', as: "vendors_create"
 
   get 'vendors/show' => 'vendors#show', as: "vendors_show"
 
   get 'vendors/edit' => 'vendors#edit', as: "vendors_edit"
 
-  get 'vendors/update' => 'vendors#update', as: "vendors_update"
+  patch 'vendors/update' => 'vendors#update', as: "vendors_update"
 
-  get 'vendors/destroy' => 'vendors#destroy', as: "vendors_destroy"
+  delete 'vendors/destroy' => 'vendors#destroy', as: "vendors_destroy"
 
   get 'markets/index' => 'markets#index', as: "markets"
 
   get 'markets/new' => 'markets#new', as: "markets_new"
 
-  get 'markets/create' => 'markets#create', as: "markets_create"
+  post 'markets/create' => 'markets#create', as: "markets_create"
 
   get 'markets/show' => 'markets#show', as: "markets_show"
 
   get 'markets/edit' => 'markets#edit', as: "markets_edit"
 
-  get 'markets/update' => 'markets#update', as: "markets_update"
+  patch 'markets/update' => 'markets#update', as: "markets_update"
 
-  get 'markets/destroy' => 'markets#destroy', as: "markets_destroy"
+  delete 'markets/destroy' => 'markets#destroy', as: "markets_destroy"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
