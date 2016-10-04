@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'farmars/index'
+
   get 'vendors/index'
 
   get 'vendors/new'
