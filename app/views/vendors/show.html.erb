@@ -9,9 +9,17 @@
 
 <h2><%= link_to("Add New Product", product_new_path) %></h2>
 
-<h3>Sales</h3>
+<h3>Total Sales</h3>
+<%total_sales = 0 %>
+<%@vendor_of_interest.sale_ids.each do |sale_id|%>
+  <%sale = Sale.find(sale_id)%>
+  <%total_sales += sale.amount%>
+  <%end%>
 
-<h2><%= link_to("Add New Sale", sale_new_path) %></h2>
+<%="$#{total_sales/100.0}"%>
+
+
+<h2><%= link_to("Enter New Sale", sale_new_path) %></h2>
 
 
 
