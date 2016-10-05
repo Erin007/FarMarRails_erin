@@ -17,9 +17,9 @@ class ProductController < ApplicationController
     @product.save
 
     if @product.save
-        redirect_to index_path, alert: "Task successfully added."
+        redirect_to index_path, alert: "Product successfully added."
     else
-        redirect_to new_path, alert: "Error adding task."
+        redirect_to new_path, alert: "Error adding product."
     end
   end
 
@@ -40,7 +40,7 @@ class ProductController < ApplicationController
   def show
   end
 
-  private
+private
  def product_params
    #Tells Rails which parameters can be changed
    params.require(:product).permit(:id, :name, :vendor_id)

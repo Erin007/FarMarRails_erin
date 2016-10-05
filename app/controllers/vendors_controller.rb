@@ -30,14 +30,14 @@ class VendorsController < ApplicationController
     @vendors.each do |vendor|
     number = params[:id].to_i
 
-    if vendor[:id] == number
-      @vendor_of_interest = vendor
+      if vendor[:id] == number
+        @vendor_of_interest = vendor
+      end
     end
-  end
 
-  if @vendor_of_interest == nil
-    @vendor_of_interest = { id: params[:id].to_i, title: "That vendor was not found", num_employees: "", market_id: ""}
-  end
+    if @vendor_of_interest == nil
+      @vendor_of_interest = { id: params[:id].to_i, title: "That vendor was not found", num_employees: "", market_id: ""}
+    end
   end
 
   def edit
@@ -53,29 +53,10 @@ class VendorsController < ApplicationController
     vendor.destroy
   end
 
-  def products
-    names = []
-    product_ids_for_this_vendor = @vendor_of_interest.product_ids
-    product_ids_for_this_vendor.each do |id|
-      product_objects = Product.find(id)
-      names << product_objects.name
-
-    end
-  end
-
-<<<<<<< HEAD
-  def products_listed
-
-  end
-
   private
    def vendor_params
      #Tells Rails which parameters can be changed
      params.require(:id).permit(:name, :num_employees, :market_id)
    end
-=======
-  def vendor
-    @vendor ||= Vendor.find(params[:id].to_i)
-  end
->>>>>>> market_branch
+
 end
