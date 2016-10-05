@@ -53,6 +53,20 @@ class VendorsController < ApplicationController
     vendor.destroy
   end
 
+  def products
+    names = []
+    product_ids_for_this_vendor = @vendor_of_interest.product_ids
+    product_ids_for_this_vendor.each do |id|
+      product_objects = Product.find(id)
+      names << product_objects.name
+
+    end
+  end
+
+  def products_listed
+
+  end
+
   private
    def vendor_params
      #Tells Rails which parameters can be changed
