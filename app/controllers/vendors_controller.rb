@@ -19,4 +19,8 @@ class VendorsController < ApplicationController
 
   def destroy
   end
+
+  def vendor
+    @vendor ||= Vendor.find(params[:id].to_i)
+  end
 end

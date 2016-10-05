@@ -1,2 +1,25 @@
-<h1>Markets#edit</h1>
-<p>Find me in app/views/markets/edit.html.erb</p>
+<h1><%= @market.name %></h1>
+
+<%= form_for @market,url: markets_update_path do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name%>
+
+<%= f.label :address %>
+<%= f.text_area :address %>
+
+<%= f.label :city %>
+<%= f.text_area :city %>
+
+<%= f.label :county %>
+<%= f.text_area :county %>
+
+<%= f.label :state %>
+<%= f.text_area :state %>
+
+<%= f.label :zip %>
+<%= f.text_area :zip %>
+
+<%= f.submit %>
+
+<% end %>

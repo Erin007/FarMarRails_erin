@@ -51,11 +51,11 @@ Rails.application.routes.draw do
 
   post 'markets/create' => 'markets#create', as: "markets_create"
 
-  get 'markets/show' => 'markets#show', as: "markets_show"
+  get 'markets/show/:id' => 'markets#show', as: "markets_show"
 
-  get 'markets/edit' => 'markets#edit', as: "markets_edit"
+  get 'markets/:id/edit' => 'markets#edit', as: "markets_edit"
 
-  patch 'markets/update' => 'markets#update', as: "markets_update"
+  patch 'markets/:id/update' => 'markets#update', as: "markets_update"
 
   delete 'markets/destroy' => 'markets#destroy', as: "markets_destroy"
 

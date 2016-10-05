@@ -1,2 +1,20 @@
-<h1>Markets#show</h1>
-<p>Find me in app/views/markets/show.html.erb</p>
+<h1><%= @market.name %></h1>
+
+<h5>Address:</h5><p><%= @market.address %></p>
+<h5>City:</h5><p><%= @market.city %></p>
+<h5>County:</h5><p><%= @market.county %></p>
+<h5>State:</h5><p><%= @market.state %></p>
+<h5>Zip:</h5><p><%= @market.zip %></p>
+
+<%= button_to "Edit", {action: "edit", id: @market[:id] }, method: :get %>
+
+<h2>Vendors:</h2>
+
+<%= button_to 'Add a Vendor', vendors_new_path, method: :get %>
+
+<p><% @vendor.each do |vendor| %></p>
+  <h2><%= link_to( vendor.name,  vendors_show_path(vendor[:id])) %></h2>
+<% end %>
+
+
+<%= button_to "Delete This Market", {action: "destroy", id: @market[:id] }, method: :delete, data: { confirm: "Do you really want to delete this market?"} %>
