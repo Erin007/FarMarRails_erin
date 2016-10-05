@@ -5,6 +5,13 @@
 <%@vendor_of_interest.product_ids.each do |product_id|%>
   <%product = Product.find(product_id)%>
   <%=product.name%><p></p>
+  <p class="delete-button"><%= button_to "Delete", { action: "destroy", id: product.id },
+
+                            method: :delete, data: { confirm: "Are you sure?" } %></p>
+
+<p class="edit-button"><%= button_to "Edit", { action: "edit", id: product.id },
+
+                                                        method: :get %></p>
   <%end%>
 
 <h2><%= link_to("Add New Product", product_new_path) %></h2>
