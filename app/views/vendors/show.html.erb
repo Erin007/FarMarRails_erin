@@ -1,17 +1,8 @@
-<h1>Vendors#show</h1>
 
-<p>Hello,<%=vendor.name%></p>
 
-<p> You've earned <%=vendor.total_sales%> so far. </p>
+<h3>Hello, <%=@vendor_of_interest.name%>!</h3>
 
-<p>Here's a list of all of your sales:</p>
-<%=vendor.sales%>
 
-<h2><%= link_to("Enter New Sale", sale_path)%></h2>
-
-<h2><%= link_to("Products", product_path)%></h2>
-
-<p class="delete-button"><%= button_to "Delete Vendor Account", { action:        "destroy", id: vendor.id }, method: :delete, data: { confirm: "Are you sure?" } %></p>
 
 
 <!-- <p>Find me in app/views/vendors/show.html.erb</p> -->
