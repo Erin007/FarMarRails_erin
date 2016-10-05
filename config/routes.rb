@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'product/index'
 
-  get 'product/new'
+  get 'product/new'=> 'product#new', as: "product_new"
 
   get 'product/create'
 
