@@ -5,11 +5,10 @@
 <%@vendor_of_interest.product_ids.each do |product_id|%>
   <%product = Product.find(product_id)%>
   <%=product.name%><p></p>
-  <p class="delete-button"><%= button_to "Delete", { action: "destroy", id: product.id },
 
-                            method: :delete, data: { confirm: "Are you sure?" } %></p>
+  <p class="delete-button"><%= button_to "Delete", product_destroy_path { action: "destroy_product", id: product_id.id }, method: :destroy_product, data: { confirm: "Are you sure?" } %></p>
 
-<p class="edit-button"><%= button_to "Edit", { action: "edit", id: product.id },
+<p class="edit-button"><%= button_to "Edit", { action: "edit", id: product_id.id },
 
                                                         method: :get %></p>
   <%end%>

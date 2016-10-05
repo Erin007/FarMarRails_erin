@@ -9,7 +9,7 @@ class VendorsController < ApplicationController
   end
 
   def new
-    @vendors = Vendor.all
+    @vendor = Vendor.new
   end
 
   def create
@@ -51,6 +51,11 @@ class VendorsController < ApplicationController
 
   def destroy
     vendor.destroy
+  end
+
+  def destroy_product
+    @product = Product.find(params[:id])
+    @product.destroy
   end
 
   private

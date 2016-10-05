@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   get 'product/update'
 
-  get 'product/destroy'
+  get 'product/destroy/:id'=>'product#destroy', as: "product_destroy"
 
   get 'product/show'
 
