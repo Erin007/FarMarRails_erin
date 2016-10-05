@@ -74,8 +74,6 @@ class VendorsController < ApplicationController
      params.require(:id).permit(:name, :num_employees, :market_id)
    end
 =======
-  def vendor
-    @vendor ||= Vendor.find(params[:id].to_i)
-  end
+
 >>>>>>> market_branch
 end

@@ -63,7 +63,6 @@ class VendorsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
   def products_listed
 
   end
@@ -73,9 +72,4 @@ class VendorsController < ApplicationController
      #Tells Rails which parameters can be changed
      params.require(:id).permit(:name, :num_employees, :market_id)
    end
-=======
-  def vendor
-    @vendor ||= Vendor.find(params[:id].to_i)
-  end
->>>>>>> market_branch
 end
