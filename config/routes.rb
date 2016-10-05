@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'sale/index'
 
-  get 'sale/new'
+  get 'sale/new'=> 'sale#new', as: "sale_new"
 
   get 'sale/create'
 
