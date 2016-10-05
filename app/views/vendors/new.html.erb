@@ -1,5 +1,24 @@
 <h1>Add a Vendor</h1>
 
+<%= form_for @vendor, url: vendors_create_path do |f| %>
+
+<%= f.label :id %>
+<%= f.text_field :id%>
+
+<%= f.label :name %>
+<%= f.text_field :name%>
+
+<%= f.label :num_employees %>
+<%= f.text_area :num_employees %>
+
+<%= f.label :market_id %>
+<%= f.text_area :market_id %>
+
+<%= f.submit %>
+
+<% end %>
+
+
 <!-- create_table "vendors", force: :cascade do |t|
   t.string   "name"
   t.integer  "num_employees"
