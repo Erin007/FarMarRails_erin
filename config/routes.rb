@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  get 'sale/index'
+
+  get 'sale/new'
+
+  get 'sale/create'
+
+  get 'sale/edit'
+
+  get 'sale/update'
+
+  get 'sale/destroy'
+
+  get 'sale/show'
+
+  get 'product/index'
+
+  get 'product/new'
+
+  get 'product/create'
+
+  get 'product/edit'
+
+  get 'product/update'
+
+  get 'product/destroy'
+
+  get 'product/show'
+
   root to: 'farmars#index'
 
   get 'farmars/index' => 'farmars#index', as: "index"
