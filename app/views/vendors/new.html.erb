@@ -2,9 +2,6 @@
 
 <%= form_for @vendor, url: vendors_create_path do |f| %>
 
-<%= f.label :id %>
-<%= f.text_field :id%>
-
 <%= f.label :name %>
 <%= f.text_field :name%>
 
@@ -17,9 +14,3 @@
 <%= f.submit %>
 
 <% end %>
-
-
-<!-- create_table "vendors", force: :cascade do |t|
-  t.string   "name"
-  t.integer  "num_employees"
-  t.integer  "market_id" -->
