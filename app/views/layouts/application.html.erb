@@ -6,13 +6,26 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
 </head>
 
 <body>
-<h1 class="all-page-header"><%= link_to("Farmers Markets", root_path)%></h1>
-<hr>
+
+<header>
+  <h1 class="all-page-header"><%= link_to("Farmers Markets", root_path)%></h1>
+  <hr>
+</header>
 <%= yield %>
 <hr>
 
+<footer>
+<p>
+  &copy Erin & Olivia 
+</p>
+
+</footer>
+
 </body>
+
+
 </html>
