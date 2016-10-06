@@ -24,9 +24,9 @@ class MarketsController < ApplicationController
     market.city = params[:market][:city]
     market.county = params[:market][:county]
     market.state = params[:market][:state]
-    market.zip = params[:market][:zip]
+    market.zip = params[:market][:zip].to_i
     market.save
-    redirect_to :markets_show
+    redirect_to :market
   end
 
   def destroy
