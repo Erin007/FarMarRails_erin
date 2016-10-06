@@ -38,6 +38,7 @@ class SalesController < ApplicationController
   end
 
   def show
+    @vendor = Vendor.find(params[:vendor_id].to_i)
     @sales = Sale.all
     @sale_of_interest = nil
 
