@@ -48,6 +48,7 @@ class VendorsController < ApplicationController
 
   def destroy
     vendor.destroy
+    redirect_to markets_path
   end
 
   def products_list
