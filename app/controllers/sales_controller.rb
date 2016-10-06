@@ -13,11 +13,11 @@ class SalesController < ApplicationController
   end
 
   def create
-    @sale = Sale.new(amount:params[:amount], purchase:params[:purchase], product_id:params[:product_id], vendor_id:params[:vendor_id])
+    @sale = Sale.new(amount:params[:sale][:amount], purchase:params[:sale][:purchase], product_id:params[:product_id], vendor_id:params[:vendor_id])
     @sale.save
 
     if @sale.save
-        redirect_to index_path, alert: "Sale successfully added."
+        redirect_to controller: 'vendors', action: 'show', id:params[:vendor_id].to_i
     else
         redirect_to new_path, alert: "Error adding sale."
     end

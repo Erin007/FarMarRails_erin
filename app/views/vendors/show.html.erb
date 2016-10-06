@@ -21,7 +21,7 @@
 <%total_sales = 0 %>
 <%@vendor_of_interest.sale_ids.each do |sale_id|%>
   <%sale = Sale.find(sale_id)%>
-  <%total_sales += sale.amount%>
+  <%total_sales += sale.amount.to_i%>
   <%end%>
 
 <%="$#{total_sales/100.0}"%>
