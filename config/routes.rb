@@ -6,6 +6,9 @@ Rails.application.routes.draw do
    resources :markets
    resources :vendors
 
+  delete 'vendors/vendor_delete_self/:id'=>'vendors#delete_self', as: 'delete_self'
+
+
   #
   # get 'sale/index'
   #

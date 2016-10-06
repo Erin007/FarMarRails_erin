@@ -51,6 +51,12 @@ class VendorsController < ApplicationController
     redirect_to :back
   end
 
+  # def delete_self
+  #   vendor.destroy
+  #   redirect_to :vendors
+  # end
+
+
 private
    def vendor_params
      #Tells Rails which parameters can be changed

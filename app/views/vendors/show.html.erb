@@ -9,9 +9,7 @@
   <p class="delete-button"><%= button_to "Delete", product_path(product_id),
         method: :delete, data: { confirm: "Are you sure?" } %></p>
 
-  <p class="edit-button"><%= button_to "Edit", { action: "edit", id: product_id },
-
-                                                        method: :get %></p>
+  <p class="edit-button"><%= button_to "Edit", { action: "edit", id: product_id }, method: :get %></p>
 
   <%end%>
 
@@ -28,10 +26,5 @@
 
 <h2><%= link_to("Enter New Sale", new_vendor_sales_path(@vendor_of_interest)) %></h2>
 
-<p class="delete-button"><%= button_to "Delete Vendor", {action: "destroy", id: @vendor_of_interest,,  ,                       [:id] }, method: :delete, data: { confirm: "Are you sure?"} %></p>
-
-
-
-
-
+<!-- <p class="delete-button"><%= button_to "Delete Vendor", {action: "delete_self", id: @vendor_of_interest[:id] }, method: :delete, data: { confirm: "Are you sure?"} %></p> -->
 <!-- <p>Find me in app/views/vendors/show.html.erb</p> -->
