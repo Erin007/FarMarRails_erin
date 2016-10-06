@@ -13,7 +13,7 @@ class VendorsController < ApplicationController
   end
 
   def create
-    @vendor = Vendor.new(id: params[:id], name: params[:name], num_employees: params[:num_employees], market_id: params[:market_id])
+    @vendor = Vendor.new(name: params[:vendor][:name], num_employees: params[:vendor][:num_employees], market_id: params[:vendor][:market_id])
     @vendor.save
 
     if @vendor.save
