@@ -14,10 +14,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(name:params[:name], vendor_id:params[:vendor_id].to_i)
-    @product.save
-
-    if @product.save
+    @product = Product.new(name:params[:product][:name], vendor_id:params[:vendor_id].to_i)
+    if @product.save!
         redirect_to vendors_path, alert: "Product successfully added."
     else
         redirect_to new_path, alert: "Error adding product."

@@ -1,0 +1,16 @@
+<h1>Enter a New Sale</h1>
+
+<div class="form-new">
+<%= form_for ([:vendor, :product, @sales]) do |f| %>
+
+    <%= f.label :amount %>
+    <%= f.text_field :amount%>
+    <p></p>
+    <%= f.label :purchase_time %>
+    <%= f.text_field :purchase_time%>
+    <p></p>
+    <% f.hidden_field :vendor_id, value: @vendor.id %>
+    <% f.hidden_field :product_id, value: @product.id %>
+    <%= f.submit %>
+  <%end%>
+</div>

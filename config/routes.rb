@@ -4,7 +4,7 @@ Rails.application.routes.draw do
    resources :sales
    resources :products
    resources :markets
-   resources :vendors 
+   resources :vendors
 
   #
   # get 'sale/index'
@@ -72,6 +72,7 @@ Rails.application.routes.draw do
 
   resources "vendors" do
     resource "products"
+      resource "sales"
   end
 
 
