@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'rails-erd'
 
 gem 'better_errors'
 

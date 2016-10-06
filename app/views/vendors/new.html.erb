@@ -1,15 +1,14 @@
 <h1>Add a Vendor</h1>
 
 <%= form_for @vendor, url: vendors_create_path do |f| %>
-
+<!-- vendors_create_path -->
 <%= f.label :name %>
-<%= f.text_field :name%>
+<%= f.text_field :name%></br>
 
-<%= f.label :num_employees %>
-<%= f.text_area :num_employees %>
+<%= f.label :number_of_employees %>
+<%= f.text_area :num_employees %></br>
 
-<%= f.label :market_id %>
-<%= f.text_area :market_id %>
+<%= f.hidden_field :market_id, :value => @market.id %></br>
 
 <%= f.submit %>
 

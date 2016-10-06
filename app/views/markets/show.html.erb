@@ -10,7 +10,7 @@
 
 <h2>Vendors:</h2>
 
-<%= button_to 'Add a Vendor', vendors_new_path, method: :get %>
+<%= button_to 'Add a Vendor', new_market_vendor_path(@market), method: :get %>
 
 <p><% @vendor.each do |vendor| %></p>
   <h2><%= link_to( vendor.name,  vendors_show_path(vendor[:id])) %></h2>

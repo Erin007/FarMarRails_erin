@@ -10,17 +10,13 @@ class VendorsController < ApplicationController
 
   def new
     @vendor = Vendor.new
+    @market = Market.find(params[:market_id])
   end
 
   def create
-    @vendor = Vendor.new( name: params[:name], num_employees: params[:num_employees].to_i, market_id: params[:market_id].to_)
+    @vendor = Vendor.new( name:params[:vendor][:name], num_employees:params[:vendor][:num_employees].to_i, market_id:params[:vendor][:market_id].to_i)
     @vendor.save
 
-    if @vendor.save
-        redirect_to index_path, alert: "Vendor successfully added."
-    else
-        redirect_to new_path, alert: "Error adding vendor."
-    end
   end
 
   def show
