@@ -10,17 +10,13 @@ class VendorsController < ApplicationController
 
   def new
     @vendor = Vendor.new
+
+    @market = Market.find(params[:market_id])
   end
 
   def create
     @vendor = Vendor.new(name: params[:vendor][:name], num_employees: params[:vendor][:num_employees], market_id: params[:vendor][:market_id])
     @vendor.save
-
-    if @vendor.save
-        redirect_to index_path, alert: "Vendor successfully added."
-    else
-        redirect_to new_path, alert: "Error adding vendor."
-    end
   end
 
   def show
@@ -53,15 +49,11 @@ class VendorsController < ApplicationController
     vendor.destroy
   end
 
-  def destroy_product
-    @product = Product.find(params[:id])
-    @product.destroy
-  end
-
-  private
+private
    def vendor_params
      #Tells Rails which parameters can be changed
      params.require(:id).permit(:name, :num_employees, :market_id)
-   end
+
+  end
 
 end
