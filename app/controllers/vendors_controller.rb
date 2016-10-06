@@ -17,6 +17,7 @@ class VendorsController < ApplicationController
   def create
     @vendor = Vendor.new(name: params[:vendor][:name], num_employees: params[:vendor][:num_employees], market_id: params[:vendor][:market_id])
     @vendor.save
+    redirect_to market_url(params[:vendor][:market_id])
   end
 
   def show
