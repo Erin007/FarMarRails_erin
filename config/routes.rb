@@ -59,6 +59,10 @@ Rails.application.routes.draw do
 
   delete 'markets/destroy' => 'markets#destroy', as: "markets_destroy"
 
+  resources 'markets' do
+    resource 'vendor'
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
