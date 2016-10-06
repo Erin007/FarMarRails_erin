@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(name:params[:product][:name], vendor_id:params[:vendor_id].to_i)
     if @product.save!
-        redirect_to vendors_path, alert: "Product successfully added."
+         redirect_to controller: 'vendors', action: 'show', id:params[:vendor_id].to_i
     else
         redirect_to new_path, alert: "Error adding product."
     end
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
 
   def destroy
     product.destroy
-    redirect_to vendors_path
+    redirect_to request.referrer
   end
 
   def show
