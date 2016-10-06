@@ -1,9 +1,33 @@
-h1 {
-  font-family: 
-  font-size: 3em;
+.all-page-header {
+  font-family: Cabin Sketch;
+  font-size: 5em;
+  color: red;
+  text-align: center;
+  margin: 1%;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
 
+.homepage-photo img{
+  width: 100%;
+  text-align: center;
+}
+
+.homepage-photo {
+  width: 45%;
+  margin: 1%;
+  display: inline-block;
+  text-align: center;
+  margin-left: 3%;
+}
+
+hr{
+  height: 3px;
+  background: #232b2b;
+}
 
 
 
