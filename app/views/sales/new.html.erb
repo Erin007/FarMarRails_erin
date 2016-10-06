@@ -6,11 +6,17 @@
     <%= f.label :amount %>
     <%= f.text_field :amount%>
     <p></p>
-    <%= f.label :purchase %>
+    <%= f.label :purchase %> time
     <%= f.text_field :purchase%>
     <p></p>
+    <%= f.label :product_id %>
+    <%= f.select :product_id, @vendor.product_ids%>
+    <p></p>
+
     <% f.hidden_field :vendor_id, value: @vendor.id %>
-    <%= f.select :desired_attribute, [@vendor.product_ids]%>
+
+
+
 
     <%= f.submit %>
   <%end%>
