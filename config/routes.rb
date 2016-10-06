@@ -72,7 +72,10 @@ Rails.application.routes.draw do
 
   resources "vendors" do
     resource "products"
-      resource "sales"
+  end
+
+  resources "vendors" do
+    resource "sales"
   end
 
   resources 'markets' do
