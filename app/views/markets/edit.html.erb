@@ -1,6 +1,6 @@
 <h1><%= @market.name %></h1>
 
-<%= form_for @market,url: markets_update_path do |f| %>
+<%= form_for @market,url: market_path do |f| %>
 
 <%= f.label :name %>
 <%= f.text_field :name%>

@@ -2,5 +2,5 @@
 <p>This is the market's index page!</p>
 
 <p><% @market.each do |market| %></p>
-  <h2><%= link_to( market.name,  markets_path(market[:id])) %></h2>
+  <h2><%= link_to( market.name,  market_path(market[:id])) %></h2>
 <% end %>
