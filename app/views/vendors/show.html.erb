@@ -9,10 +9,6 @@
   <p class="delete-button"><%= button_to "Delete", product_path(product_id),
         method: :delete, data: { confirm: "Are you sure?" } %></p>
 
-  <p class="edit-button"><%= button_to "Edit", { action: "edit", id: product_id },
-
-                                                        method: :get %></p>
-
   <%end%>
 
 <h2><%= link_to("Add New Product", new_vendor_products_path(@vendor_of_interest)) %></h2>
