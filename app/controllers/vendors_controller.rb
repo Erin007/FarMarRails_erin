@@ -5,7 +5,7 @@ class VendorsController < ApplicationController
   end
 
   def index
-    @vendors = Vendor.all
+    @vendors = Vendor.order(:name)
   end
 
   def new

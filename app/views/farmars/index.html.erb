@@ -2,10 +2,10 @@
 
   <section class= "homepage-photo">
     <p><%= link_to("Markets", markets_path) %></p>
-    <%= image_tag("market.jpg")%>
+    <%= link_to image_tag("market.jpg"), markets_path%>
   </section>
 
   <section class= "homepage-photo">
     <p><%= link_to("Vendors", vendors_path) %></p>
-    <%= image_tag("vendor.jpg")%>
+    <%= link_to image_tag("vendor.jpg"), vendors_path%>
   </section>
