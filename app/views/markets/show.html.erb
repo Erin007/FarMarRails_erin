@@ -14,6 +14,7 @@
 
 <p><% @vendor.each do |vendor| %></p>
   <h2><%= link_to( vendor.name,  vendor_path(vendor[:id])) %></h2>
+  <p class="delete-button"><%= button_to "Delete Vendor", {controller: "vendors", action: "destroy", id: vendor[:id] }, method: :delete, data: { confirm: "Are you sure?"} %></p>
 <% end %>
 
 

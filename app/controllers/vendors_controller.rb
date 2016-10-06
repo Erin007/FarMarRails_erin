@@ -48,7 +48,7 @@ class VendorsController < ApplicationController
 
   def destroy
     vendor.destroy
-    redirect_to markets_path
+    redirect_to :back
   end
 
 private
