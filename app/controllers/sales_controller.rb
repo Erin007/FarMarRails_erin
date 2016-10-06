@@ -1,4 +1,4 @@
-class SaleController < ApplicationController
+class SalesController < ApplicationController
   def sale
     @sale ||= Sale.find(params[:id].to_i)
   end

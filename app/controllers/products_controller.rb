@@ -1,4 +1,4 @@
-class ProductController < ApplicationController
+class ProductsController < ApplicationController
 
   def product
     @product ||= Product.find(params[:id].to_i)
@@ -9,15 +9,16 @@ class ProductController < ApplicationController
   end
 
   def new
+    @vendor = Vendor.find(params[:vendor_id].to_i)
     @product = Product.new
   end
 
   def create
-    @product = Product.new(id: params[:id], name: params[:name], vendor_id: params[:vendor_id])
+    @product = Product.new(name:params[:name], vendor_id:params[:vendor_id].to_i)
     @product.save
 
     if @product.save
-        redirect_to index_path, alert: "Product successfully added."
+        redirect_to vendors_path, alert: "Product successfully added."
     else
         redirect_to new_path, alert: "Error adding product."
     end
@@ -34,7 +35,7 @@ class ProductController < ApplicationController
 
   def destroy
     product.destroy
-    redirect_to request.referrer
+    redirect_to vendors_path
   end
 
   def show

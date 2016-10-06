@@ -1,0 +1,15 @@
+<h1>Add a New Product</h1>
+
+<div class="form-new">
+<%= form_for ([:vendor, @product]) do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name%>
+    <p></p>
+    <% f.hidden_field :vendor_id, value: @vendor.id %>
+
+    <%= f.submit %>
+  <%end%>
+</div>
+
+<!-- <p>Find me in app/views/product/new.html.erb</p> -->
