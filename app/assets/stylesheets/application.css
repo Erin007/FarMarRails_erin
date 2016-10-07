@@ -17,7 +17,6 @@ a:hover{
 .homepage-photo img{
   width: 100%;
   text-align: center;
-  border-radius: 2%;
 }
 
 .homepage-photo {
@@ -49,6 +48,57 @@ p{
 
 footer {
   font-size: .5em;
+}
+
+/* Vendors View Styling */
+
+#vendor-show{
+    margin-bottom: 8%;
+}
+
+#vendor-show section {
+  width: 25%;
+  display: inline-block;
+  padding-left: 5%;
+  text-align: left;
+}
+
+.products-list {
+  border-right: solid 1px #eaebeb;
+  border-left: solid 1px #eaebeb;
+}
+
+ul li{
+  list-style-type: none;
+  display: inline-block;
+}
+
+.products-list h2, .products-list h3{
+  margin-left: 4%;
+}
+
+.products-list ul{
+  margin-left: -6%;
+}
+
+#vendor-name {
+  font-size: 3em;
+  margin-left: 5%;
+}
+
+img {
+  border-radius: 2%;
+}
+
+#veg-priced-photo {
+  width: 100%;
+  height: 100%;
+  /*padding-left: 10%;*/
+}
+
+.sales {
+  background: gold;
+  margin-top: -1000px;
 }
 
 

@@ -1,30 +1,48 @@
-<h2><%=@vendor_of_interest.name%></h2>
+<h1 id="vendor-name"><%=@vendor_of_interest.name%></h1>
 
-<h3>Products</h3>
+<div id="vendor-show">
 
-<%@vendor_of_interest.product_ids.each do |product_id|%>
-  <%product = Product.find(product_id)%>
-  <%=product.name%><p></p>
+  <section class="sales">
+    <h2>Sales</h2>
 
-  <p class="delete-button"><%= button_to "Delete", product_path(product_id),
-        method: :delete, data: { confirm: "Are you sure?" } %></p>
-<%end%>
+    <h3>Total Sales</h3>
+    <%total_sales = 0 %>
+    <%@vendor_of_interest.sale_ids.each do |sale_id|%>
+      <%sale = Sale.find(sale_id)%>
+      <%total_sales += sale.amount.to_i%>
+      <%end%>
+    <%="$#{total_sales/100.0}"%>
 
-<h2><%= link_to("Add New Product", new_vendor_products_path(@vendor_of_interest)) %></h2>
+    <h3><%= link_to("Enter New Sale", new_vendor_sales_path(@vendor_of_interest)) %></h3>
 
-<h3>Total Sales</h3>
-<%total_sales = 0 %>
-<%@vendor_of_interest.sale_ids.each do |sale_id|%>
-  <%sale = Sale.find(sale_id)%>
-  <%total_sales += sale.amount.to_i%>
-  <%end%>
+    <h3><%= link_to("See All Sales", vendor_sales_path(@vendor_of_interest)) %></h3>
+  
+  </section>
 
-<%="$#{total_sales/100.0}"%>
+  <section class="products-list">
+    <h2>Products</h2>
 
-<h2><%= link_to("Enter New Sale", new_vendor_sales_path(@vendor_of_interest)) %></h2>
-<h3>Sales</h3>
+    <%@vendor_of_interest.product_ids.each do |product_id|%>
+      <%product = Product.find(product_id)%>
 
-<h2><%= link_to("See All Sales", vendor_sales_path(@vendor_of_interest)) %></h2>
+        <ul id="product-delete">
+          <li><%=product.name %></li>
+          <li><%=button_to "✗", product_path(product_id),
+            method: :delete, data: { confirm: "Are you sure?" }%></li>
+        </ul>
+
+        <p></p>
+
+    <%end%>
+
+    <h3><%= link_to("Add New Product", new_vendor_products_path(@vendor_of_interest)) %></h3>
+  </section>
+
+  <section>
+    <%=image_tag("veg_priced.jpg", id:"veg-priced-photo")%>
+  </section>
+
+</div>
 
 <!-- <p class="delete-button"><%= button_to "Delete Vendor", {action: "delete_self", id: @vendor_of_interest[:id] }, method: :delete, data: { confirm: "Are you sure?"} %></p> -->
 <!-- <p>Find me in app/views/vendors/show.html.erb</p> -->
