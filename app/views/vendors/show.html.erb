@@ -1,7 +1,5 @@
-<h1 id="vendor-name"><%=@vendor_of_interest.name%></h1>
-
 <div id="vendor-show">
-
+<h1 id="vendor-name"><%=@vendor_of_interest.name%></h1>
   <section class="sales">
     <h2>Sales</h2>
 
@@ -16,16 +14,16 @@
     <h3><%= link_to("Enter New Sale", new_vendor_sales_path(@vendor_of_interest)) %></h3>
 
     <h3><%= link_to("See All Sales", vendor_sales_path(@vendor_of_interest)) %></h3>
-  
+
   </section>
 
   <section class="products-list">
-    <h2>Products</h2>
+    <h2>Products for Sale</h2>
 
     <%@vendor_of_interest.product_ids.each do |product_id|%>
       <%product = Product.find(product_id)%>
 
-        <ul id="product-delete">
+        <ul>
           <li><%=product.name %></li>
           <li><%=button_to "✗", product_path(product_id),
             method: :delete, data: { confirm: "Are you sure?" }%></li>

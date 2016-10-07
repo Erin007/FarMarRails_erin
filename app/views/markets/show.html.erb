@@ -1,21 +1,32 @@
-<h1><%= @market.name %></h1>
-
-<h5>Address:</h5><p><%= @market.address %></p>
-<h5>City:</h5><p><%= @market.city %></p>
-<h5>County:</h5><p><%= @market.county %></p>
-<h5>State:</h5><p><%= @market.state %></p>
-<h5>Zip:</h5><p><%= @market.zip %></p>
-
-<%= button_to "Edit", {action: "edit", id: @market[:id] }, method: :get %>
-
-<h2>Vendors:</h2>
-
-<%= button_to 'Add a Vendor', new_market_vendor_path(@market), method: :get %>
-
-<p><% @vendor.each do |vendor| %></p>
-  <h2><%= link_to( vendor.name,  vendor_path(vendor[:id])) %></h2>
-  <p class="delete-button"><%= button_to "Delete Vendor", {controller: "vendors", action: "destroy", id: vendor[:id] }, method: :delete, data: { confirm: "Are you sure?"} %></p>
-<% end %>
 
 
-<%= button_to "Delete This Market", {action: "destroy", id: @market[:id] }, method: :delete, data: { confirm: "Do you really want to delete this market?"} %>
+<div id="market-show">
+
+  <section class="market-info">
+    <h1><%= @market.name %></h1>
+    <p><%= @market.address %>
+    <%= @market.city %>, <%= @market.state %>
+    <%= @market.county %> County
+    <%= @market.zip %></p>
+    <%= button_to "Edit", {action: "edit", id: @market[:id] }, method: :get %>
+    <%= button_to "Delete This Market", {action: "destroy", id: @market[:id] }, method: :delete, data: { confirm: "Do you really want to delete this market?"} %>
+
+    <%=image_tag("mel_farming.jpg", id:"market-show-photo")%>
+  </section>
+
+  <section class="vendors-list">
+  <h2>Vendors at this Market</h2>
+
+    <%= button_to 'Add a Vendor', new_market_vendor_path(@market), method: :get %>
+
+    <%@vendor.each do |vendor| %>
+      <ul>
+        <li><%= link_to( vendor.name,  vendor_path(vendor[:id])) %></li>
+        <li><%= button_to "✗", {controller: "vendors", action: "destroy", id: vendor[:id] }, method: :delete, data: { confirm: "Are you sure?"} %></li>
+      </ul>
+
+      <p></p>
+    <% end %>
+  </section>
+
+</div>
