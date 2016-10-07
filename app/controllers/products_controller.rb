@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
 private
  def product_params
    #Tells Rails which parameters can be changed
-   params.require(:product).permit(:id, :name, :vendor_id)
+   params.require(:product).permit( :name, :vendor_id)
  end
 
 end
