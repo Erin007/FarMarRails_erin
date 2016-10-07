@@ -3,13 +3,13 @@
   <section class="sales">
     <h2>Sales</h2>
 
-    <h3>Total Sales</h3>
     <%total_sales = 0 %>
     <%@vendor_of_interest.sale_ids.each do |sale_id|%>
       <%sale = Sale.find(sale_id)%>
       <%total_sales += sale.amount.to_i%>
       <%end%>
-    <%="$#{total_sales/100.0}"%>
+
+    <h3>Total Sales: <%="$#{total_sales/100.0}"%></h3>
 
     <h3><%= link_to("Enter New Sale", new_vendor_sales_path(@vendor_of_interest)) %></h3>
 
