@@ -1,5 +1,6 @@
+
 <div id="vendor-show">
-<h1 id="vendor-name"><%=@vendor_of_interest.name%></h1>
+  <h1 id="vendor-name"><%=@vendor_of_interest.name%></h1>
   <section class="sales">
     <h2>Sales</h2>
 
@@ -9,7 +10,7 @@
       <%total_sales += sale.amount.to_i%>
       <%end%>
 
-    <h3>Total Sales: <%="$#{total_sales/100.0}"%></h3>
+    <h3>Total Sales: <%= number_to_currency((total_sales/100.0))%></h3>
 
     <h3><%= link_to("Enter New Sale", new_vendor_sales_path(@vendor_of_interest)) %></h3>
 

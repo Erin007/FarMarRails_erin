@@ -96,10 +96,9 @@ img {
   height: 100%;
 }
 
-.sales {
-  /*background: gold;*/
-  margin-top: -1000px;
-}
+/*.sales {
+  background: gold;
+}*/
 
 /* Markets Show Styling */
 .market-info p{
