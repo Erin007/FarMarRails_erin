@@ -1,6 +1,8 @@
 <!-- <h1>Markets#index</h1> -->
 <p>Markets</p>
+<% market_names = [] %>
 
 <p><% @market.each do |market| %></p>
+  <% market_names << market.name %>
   <h2><%= link_to( market.name,  market_path(market[:id])) %></h2>
 <% end %>

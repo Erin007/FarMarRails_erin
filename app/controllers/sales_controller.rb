@@ -13,7 +13,7 @@ class SalesController < ApplicationController
   end
 
   def create
-    @sale = Sale.new(amount:params[:sale][:amount], purchase:params[:sale][:purchase], product_id:params[:product_id], vendor_id:params[:vendor_id])
+    @sale = Sale.new(amount:params[:sale][:amount], purchase:params[:sale][:purchase], product_id:params[:sale][:product_id], vendor_id:params[:vendor_id])
     @sale.save
 
     if @sale.save

@@ -4,8 +4,8 @@
 
 <%@vendor.sale_ids.each do |sale_id|%>
   <%sale = Sale.find(sale_id)%>
-  <% sale_formatted = (sale.amount.to_i)/100.00%>
-  Amount:  $<%= sale_formatted%> |
+  <% sale_formatted = number_to_currency((sale.amount.to_i)/100.00)%>
+  Amount: <%= sale_formatted%> |
   Purchase date: <%=sale.purchase%> |
   Product id: <%=sale.product_id%>
   <p></p>
