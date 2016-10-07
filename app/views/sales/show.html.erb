@@ -5,10 +5,17 @@
 <%@vendor.sale_ids.each do |sale_id|%>
   <%sale = Sale.find(sale_id)%>
   <% sale_formatted = number_to_currency((sale.amount.to_i)/100.00)%>
-  Amount: <%= sale_formatted%> |
-  Purchase date: <%=sale.purchase%> |
-  Product id: <%=sale.product_id%>
-  <p></p>
+<ul>
+
+    <li>
+    Amount: <%= sale_formatted%> |
+    Purchase date: <%=sale.purchase%> |
+    Product id: <%=sale.product_id%>
+    </li>
+
+    <li><%= button_to "✗", {controller: "sales", action: "destroy", id: sale_id }, method: :delete, data: { confirm: "Are you sure?"} %></li>
+    <p></p>
+  </ul>
   <%end%>
-  <p></p>
+
 <!-- <p>Find me in app/views/sale/show.html.erb</p> -->
