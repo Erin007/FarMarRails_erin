@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   delete 'vendors/vendor_delete_self/:id'=>'vendors#delete_self', as: 'delete_self'
 
+## Path override
+##resources :sales, pathnames: {new: 'make', edit: 'change'}
+
+
 
   #
   # get 'sale/index'
